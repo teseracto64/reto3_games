@@ -1,0 +1,8 @@
+<app-bar [optionSelected]="'popular'"></app-bar>
+<div class="w-full h-full bg-store-default">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 bg-store-default">
+        <div *ngFor="let card of popularGames">
+          <app-card-game [card]="card"></app-card-game>
+        </div>
+      </div>      
+</div>

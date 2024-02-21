@@ -1,0 +1,22 @@
+<div class="flex flex-wrap justify-center bg-store-default">
+  <div class="max-w-sm rounded overflow-hidden shadow-lg m-4 bg-store-dark">
+    <div class="text-[20px] text-xl mb-4 text-center pt-2 text-store-light">{{ card.title }}</div>
+   <div class="flex justify-center"> <img class="w-full max-w-[150px] " src="{{ card.image }}" alt="{{ card.title }}"></div>
+    <div class="px-2 py-2">
+      
+      <span class="inline-block rounded-full  pt-2 text-sm  text-store-light "> Fecha de lanzamiento: {{ card.releaseDate|date:'dd/MMMM/yyyy' }}</span>
+    </div>
+    <div class="px-2 ">
+      <p class=" text-store-light">Descripción:</p>
+      <p class="text-store-light text-[12px]">{{ card.description }}</p>
+      
+      <div class="flex justify-between">
+        <span class="inline-block  rounded-full px-3 py-1 text-sm font-[400] text-store-light">Rating: {{ card.rating }}</span>
+        <span class="inline-block rounded-full pr-3 py-1 text-sm font-[400] text-store-light mr-4">Descargas: {{ card.downloads }}</span></div>
+    </div>
+    <div class="px-2 py-4 flex justify-between">
+      <button class="text-store-light bg-store-darkblue ml-2  py-2 px-4 rounded min-w-[100px]">Descargar</button>
+      <button class="text-store-light bg-store-succes  mr-6 py-2 px-4 rounded min-w-[100px]">Comprar</button>
+    </div>
+  </div>
+</div>

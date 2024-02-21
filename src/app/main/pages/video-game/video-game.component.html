@@ -1,0 +1,56 @@
+<app-bar [optionSelected]="'newgame'"></app-bar>
+<div class="min-h-screen flex items-center justify-center bg-store-default rounded-lg">
+    <div class="max-w-md w-full bg-store-dark">
+      <div class="text-center mt-3">
+        <h2 class="text-3xl text-store-light">{{ 'Agregar juego' }}</h2>
+      </div>
+      <form [formGroup]="cardForm" (ngSubmit)="addCard()" class="bg-white shadow-md rounded px-8 pt-6 pb-4">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="mb-4">
+            <label class="block text-store-light text-sm mb-2" for="title">Título<sup>*</sup></label>
+            <input autocomplete="off" formControlName="title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="Título">
+            <mat-error *ngIf="controls['title'].hasError('required') && controls['title'].touched">
+              El título es obligatorio
+            </mat-error>
+          </div>
+          <div class="mb-4">
+            <label class="block text-store-light text-sm mb-2" for="description">Descripción<sup>*</sup></label>
+            <textarea autocomplete="off" formControlName="description" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" rows="2" placeholder="Descripción"></textarea>
+            <mat-error *ngIf="controls['description'].hasError('required') && controls['description'].touched">
+              La descripción es obligatoria
+            </mat-error>
+          </div>
+          <div class="mb-4">
+            <label class="block text-store-light text-sm mb-2" for="releaseDate">Fecha de lanzamiento<sup>*</sup></label>
+            <input autocomplete="off" formControlName="releaseDate" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="releaseDate" type="text" placeholder="mm/dd/aaaa">
+            <mat-error *ngIf="controls['releaseDate'].hasError('required') && controls['releaseDate'].touched">
+              La fecha de lanzamiento es obligatoria
+            </mat-error>
+          </div>
+          <div class="mb-4">
+            <label class="block text-store-light text-sm mb-2" for="image">URL de la imagen<sup>*</sup></label>
+            <input autocomplete="off" formControlName="image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="image" type="text" placeholder="URL de la imagen">
+            <mat-error *ngIf="controls['image'].hasError('required') && controls['image'].touched">
+              La URL de la imagen es obligatoria
+            </mat-error>
+          </div>
+          <div class="mb-4">
+            <label class="block text-store-light text-sm mb-2" for="rating">Rating</label>
+            <input autocomplete="off" formControlName="rating" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="rating" type="number" placeholder="Rating" min="0" max="5">
+          </div>
+          <div class="mb-4">
+            <label class="block text-store-light text-sm mb-2" for="downloads">Descargas</label>
+            <input autocomplete="off" formControlName="downloads" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="downloads" type="number" placeholder="Descargas"  min="0" max="5">
+          </div>
+          <div class="mb-4">
+            <label class="inline-flex items-center">
+              <input autocomplete="off" formControlName="comingSoon" type="checkbox" class="form-checkbox h-5 w-5 text-store-darkblue" id="comingSoon">
+            </label>
+            <span class="ml-2 text-store-light">Próximo a lanzamiento</span>
+          </div>
+        </div>
+        <button class="bg-store-darkblue text-store-light text-lg py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="submit" [disabled]="!cardForm.valid">Agregar</button>
+      </form>
+    </div>
+  </div>
+  

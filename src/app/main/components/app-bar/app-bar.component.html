@@ -1,0 +1,29 @@
+ <div class="bg-store-dark min-h-[70px] flex ">
+    <div class="mx-3">
+      <img src="../../../assets/images/videojuego.png" alt="logo">
+    </div>
+    <div class="flex items-center justify-center"><span class="text-store-light mx-2 text-[22px]">{{websiteName}}</span></div>
+    
+  <div class="flex  justify-between">
+    <span [ngClass]="{'border-b-store-darkblue': optionSelected === 'home', 
+    'border-b-2': optionSelected === 'home'}" 
+    routerLink="/home" class="text-store-blue p-5 mr-5 mt-1 text-lg hover:cursor-pointer">Home</span>
+    
+    <button [ngClass]="{'border-b-store-darkblue': optionSelected === 'popular',
+     'border-b-2': optionSelected === 'popular'}" class="text-store-blue p-5 hover:cursor-pointer hover:underline text-sm " routerLink="/home/videogames/more-popular">Más Populares</button>
+    
+    <button [ngClass]="{'border-b-store-darkblue': optionSelected === 'downloaded', 
+    'border-b-2': optionSelected === 'downloaded'}" class="text-store-blue p-5 hover:cursor-pointer hover:underline text-sm" routerLink="/home/videogames/most-downloaded">Más Descargados</button>
+    
+    <button [ngClass]="{'border-b-store-darkblue': optionSelected === 'upcoming',
+     'border-b-2': optionSelected === 'upcoming'}" class="text-store-blue p-5 hover:cursor-pointer hover:underline text-sm" routerLink="/home/videogames/upcomings">Próximamente</button>
+    <button [ngClass]="{'border-b-store-darkblue': optionSelected === 'newgame',
+     'border-b-2': optionSelected === 'newgame'}" class="bg-store-darkblue text-store-light m-5 px-3 rounded border-0 hover:cursor-pointer text-sm" routerLink="/home/videogames/new">Agregar Juego</button>
+  </div>
+  <div class="flex flex-grow"></div>
+  <div class="w-[15%] flex items-center justify-end mx-4">
+    <button (click)="logout()">
+      <span class="text-store-gray font-bold mr-4 hover:underline hover:cursor-pointer">Cerrar sesión</span>
+    </button>
+  </div>
+  </div>
